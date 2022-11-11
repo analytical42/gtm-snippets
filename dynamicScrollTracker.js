@@ -38,24 +38,24 @@ var _scrollTracker = function(contentElement, debug) {
 		if(scrollPositionBot() >= elemPositionBot && !endReached) {
 			var endTime = new Date().getTime() - timerOffset;
 			var readerType = (endTime > readingTime) ? 'Content Read' : 'Content Scanned';
-            var reads = (readerType == 'Content Read') ? 1 : 0;
-            var scans = (readerType == 'Content Scanned') ? 1 : 0;
-            var readerVars = [endTime, readingTime, readerType, reads];
+            		var reads = (readerType == 'Content Read') ? 1 : 0;
+            		var scans = (readerType == 'Content Scanned') ? 1 : 0;
+           		var readerVars = [endTime, readingTime, readerType, reads];
 
 			var eventReaderType = {
 				'event' : 'contentConsumption',
 				'contentCategory' : 'Content Consumption',
 				'contentAction' : readerType,
 				'contentLabel' : document.title,
-                'contentReads' : reads,
-                'contentScans' : scans,
+                		'contentReads' : reads,
+                		'contentScans' : scans,
 				'noninteraction' : 0
 			};
 
 			(!debug) ? dataLayer.push(eventReaderType) : console.log(eventReaderType);
           
-            console.log(readerVars);
-            console.log(eventReaderType);
+            		console.log(readerVars);
+            		console.log(eventReaderType);
 
 			endReached = true;
 		}
