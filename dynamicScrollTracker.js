@@ -2,15 +2,15 @@
 var _scrollTracker = function(contentElement, debug) {
 
 	var debug              = debug,
-		elemRect             = contentElement.getBoundingClientRect(),
-		bodyRect		         = document.body.getBoundingClientRect(),
-		offset               = 199,
-		timer			           = 0,
-		timerOffset		       = new Date().getTime(),
-        wordCount        = contentElement.innerText.trim().split(' ').length,
-        avgReadSpeed     = 250/60;
+	    elemRect           = contentElement.getBoundingClientRect(),
+	    bodyRect	       = document.body.getBoundingClientRect(),
+	    offset             = 199,
+	    timer	       = 0,
+	    timerOffset	       = new Date().getTime(),
+            wordCount          = contentElement.innerText.trim().split(' ').length,
+            avgReadSpeed       = 250/60;
   
-  var readingTime        = (wordCount/avgReadSpeed)*1000;
+  	var readingTime        = (wordCount/avgReadSpeed)*1000;
 
 	var documentHeight     = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
 	var viewportHeight     = Math.max(document.documentElement.clientHeight, window.innerHeight);
@@ -20,10 +20,10 @@ var _scrollTracker = function(contentElement, debug) {
 	var elemPositionBot    = elemRect.bottom - bodyRect.top;
 
 	var scrollStarted      = false,
-		startedReading       = false,
-		reachedMid           = false,
-		endReached           = false,
-		bottomReached        = false;
+	    startedReading     = false,
+	    reachedMid         = false,
+	    endReached         = false,
+	    bottomReached      = false;
 
 	function init() {
 
